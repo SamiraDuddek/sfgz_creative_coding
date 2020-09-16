@@ -1,132 +1,59 @@
-// wenn man etwas verändern will brauch man eine letiable
-let a;
-let b;
-let c;
-let d;
 
-let f;
+let kreis = 100;
+let groesse = 30;
+
+
 
 function setup() {
-  createCanvas(400, 400);
-  a = height / 2;
-  b = height / 5;
-  c = height / 10;
-  d = height / 50;
-  
-  f = 200
+  createCanvas(600, 600);
+  frameRate(60);
 
-  //b = height / 5;
-  //c = height / 10;
-  //d = height / 50;
 
 }
 
 function draw() {
-  background(191, 168, 163);
-  //stroke(200);
-  //line(0, a, width, a);
+  background(242, 242, 240);
 
- //hellblau
-  noStroke();
-  fill(89, 55, 47);
-  ellipse(a, a, 50, 50)
-  
-  //dunkelblau
-  noStroke();
-  fill(32, 38, 38);
-  ellipse(b, b, 50, 50);
-  
-  //grün
-  
-  noStroke();
-  fill(242, 164, 119);
-  ellipse(a, b, 50, 50);
-  
-  //hellgrün
-  noStroke();
-  fill( 72, 88, 89);
-  ellipse(b, a, 50, 50);
-  
-  a = a - 0.5;
-  
+  noFill();
 
-  b = b - 1;
-  
+  strokeWeight(4);
+  //stroke(random(255), random(255), random(255));
 
-  c = c + 0.5;
-  
+  stroke(23, 49, 40);
+  ellipse(300, 300, kreis, kreis);
 
-  d = d + 2;
-  
+  stroke(56, 93, 58);
+  ellipse(300, 300, kreis + groesse, kreis + groesse);
+
+  stroke(170, 200, 164);
+  ellipse(300, 300, kreis + 2*groesse, kreis + 2*groesse );
+
+  stroke(197, 215, 165);
+  ellipse(300, 300, kreis + 3*groesse, kreis + 3*groesse );
+
+  stroke(224, 230, 184);
+  ellipse(300, 300, kreis + 4*groesse, kreis + 4*groesse );
+
+  stroke(255, 255, 255);
+  ellipse(300, 300, kreis + 5*groesse, kreis + 5*groesse );
 
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(c, c, 50, 50);
+  //Test ob die Mitte stimmt
+  //rect(300, 300, 100, 100);
+  fill(255, 255, 255);
+  ellipse(300, 300, 15, 15);
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(c, a, 50, 50);
+  if (mouseIsPressed) {
+    	kreis = kreis + 1;
+	} else{
+		kreis = kreis -1;
+	}
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(a, c, 50, 50);
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(b, c, 50, 50);
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(c, b, 50, 50);
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(d, d, 50, 50);
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(d, a, 50, 50);
 
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(a, d, 50, 50);
-
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(d, b, 50, 50);
-
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(b, d, 50, 50);
-
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(c, d, 50, 50);
-
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(d, c, 50, 50);
-  
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(a, f, 50, 50);
-  
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(b, f, 50, 50);
-  
-   noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(f, a, 50, 50);
-  
-  noStroke();
-  fill(250, 250, 250, 90);
-  ellipse(f, b, 50, 50);
-  
-  noStroke();
-  fill(32, 38, 38);
-  ellipse(f, f, 50, 50);
 
 
 }
