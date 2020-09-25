@@ -5,12 +5,23 @@ function setup() {
 function draw() {
   background(220);
 
-noStroke();
+  noFill();
 
-//oben
-triangle(100, 100, 200, 400, 300, 100);
-//unten
-triangle(200, 400, 100, 700, 300, 700);
+  for (let kreis = 10; kreis < width /2; kreis = kreis + 90 *0.3) {
 
+    strokeWeight(10);
+    stroke(204, 190, 187);
+    circle(mouseX, mouseY, kreis);
+    
 
+    stroke(72, 88, 88);
+    circle(405, 400, kreis);
+    
+    stroke(242, 164, 118);
+    circle(400, 405, kreis);
+    
+    stroke(135, 107, 103);
+    circle(395, 400, kreis);   
+
+  }
 }
