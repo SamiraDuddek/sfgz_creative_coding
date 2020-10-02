@@ -5,21 +5,47 @@ function setup() {
 function draw() {
   background(220);
 
+
 noStroke();
 
-//Wolke 1
-ellipse(400, 100, 100, 100);
-ellipse(430, 170, 90, 90);
-ellipse(350, 150 , 150, 150);
-ellipse(280, 160 , 100, 100);
+//Quadrat Mitte 
+quad(400, 400, 500, 500, 400, 600, 300, 500);
 
-//Wolke 2
+stroke(51);
+//Quadrat Klein oben 
+quad(400, 410, 440, 450, 400, 490, 360, 450);
 
-ellipse(800, 120, 170, 170);
-ellipse(720, 150, 90, 90);
-ellipse(880, 130, 140, 140);
-ellipse(860, 60, 90, 90);
+//Quadrat Klein links
+quad(310, 500, 350, 540, 390, 500, 350, 460);
 
+//Quadrat Klein unten
+quad(400, 510, 440, 550, 400, 590, 360, 550);
 
+//Quadrat Klein rechts
+quad(450, 460, 490, 500, 450, 540, 410, 500);
 
-}ß
+//fill(51);
+
+//Linke Seite 
+
+beginShape();
+vertex(400, 400);
+vertex(300, 500);
+vertex(400, 600);
+vertex(400, 640);
+vertex(260, 500);
+vertex(400, 360);
+endShape(CLOSE);
+
+//Rechte Seite
+
+beginShape();
+vertex(400, 400);
+vertex(500, 500);
+vertex(400, 600);
+vertex(400, 640);
+vertex(540, 500);
+vertex(400, 360);
+endShape(CLOSE);
+
+}
