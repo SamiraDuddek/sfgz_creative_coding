@@ -4,6 +4,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
    background(220);
    angleMode(DEGREES);
+
 }
 
 
@@ -18,7 +19,9 @@ for (var x = 0; x<width; x+= stepx) {
       triangle(0+x, 0+y, 100+x, 200+y, 200+x, 0+y);
 
       //MusterGedreht(0+x, 0+y);
-      MusterGedreht( 0+x, 0+y);
+      //MusterGedreht( 0+x, 0+y);
+
+      quadratGedreht(0+x, 0+y);
     }
   }
 
@@ -33,6 +36,16 @@ function MusterGedreht() {
   rotate(-45);
   meinMuster(0, 0);
 
+}
+
+
+function quadratGedreht(x,y){//hier nimmst du die Angaben von oben in Empfang-- d.h. um wieviel in der x und y Koordinate das Muster verschoben wird
+    //rectMode(CENTER);
+    push();
+    translate(x,y);
+    rotate(-45);
+    rect(0,0,250,50);
+    pop();
 }
 
 function meinMuster(){
