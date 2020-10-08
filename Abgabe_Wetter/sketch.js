@@ -1,51 +1,68 @@
+
+
 function setup() {
-  createCanvas(1000,800);
+  createCanvas(windowWidth, windowHeight);
+   background(220);
+   angleMode(DEGREES);
 }
 
-function draw() {
-  background(220);
 
+function draw(){
 
-noStroke();
+var stepx = 250; 
+var stepy = 250; 
 
-//Quadrat Mitte 
-quad(400, 400, 500, 500, 400, 600, 300, 500);
+for (var x = 0; x<width; x+= stepx) {
+    for (var y = 0; y<height; y+= stepy) {
 
-stroke(51);
-//Quadrat Klein oben 
-quad(400, 410, 440, 450, 400, 490, 360, 450);
+      triangle(0+x, 0+y, 100+x, 200+y, 200+x, 0+y);
 
-//Quadrat Klein links
-quad(310, 500, 350, 540, 390, 500, 350, 460);
+      //MusterGedreht(0+x, 0+y);
+      MusterGedreht( 0+x, 0+y);
+    }
+  }
 
-//Quadrat Klein unten
-quad(400, 510, 440, 550, 400, 590, 360, 550);
-
-//Quadrat Klein rechts
-quad(450, 460, 490, 500, 450, 540, 410, 500);
-
-//fill(51);
-
-//Linke Seite 
-
-beginShape();
-vertex(400, 400);
-vertex(300, 500);
-vertex(400, 600);
-vertex(400, 640);
-vertex(260, 500);
-vertex(400, 360);
-endShape(CLOSE);
-
-//Rechte Seite
-
-beginShape();
-vertex(400, 400);
-vertex(500, 500);
-vertex(400, 600);
-vertex(400, 640);
-vertex(540, 500);
-vertex(400, 360);
-endShape(CLOSE);
 
 }
+
+
+
+function MusterGedreht() {
+
+  translate(0, 175);
+  rotate(-45);
+  meinMuster(0, 0);
+
+}
+
+function meinMuster(){
+
+strokeWeight(3);
+stroke(0,0,0);
+
+fill(0,0,0);
+//Dreieck Oben
+triangle(0,0, 250, 0, 0, 250);
+
+fill(255, 255,255);
+//Dreieck uten
+triangle(250, 0, 250, 250, 0, 250);
+
+//Grosses Rechteck
+quad(50, 50, 200, 50, 200, 200, 50, 200);
+
+//kleines Rechteck oben links
+quad(75, 75, 112.5, 75, 112.5, 112.5, 75, 112.5);
+//kleines Rechteck oben rechts
+quad(137.5, 75, 175, 75, 175, 112.5, 137.5, 112.5);
+//kleines Rechteck unten links
+quad(75, 137.5, 112.5, 137.5, 112.5, 175, 75, 175);
+//kleines Rechteck unten rechts
+quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
+
+}
+
+
+
+
+
