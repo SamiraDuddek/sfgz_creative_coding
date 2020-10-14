@@ -1,43 +1,75 @@
+var gui;
 
+var drehen = -45;
+var strichdicke = 3; 
+
+
+var c1, c2, c3;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
    background(220);
    angleMode(DEGREES);
+
+   c1 = color(255, 255, 255);
+   c2 = color(242, 242, 242);
+   c3 = color(217, 217, 217);
+   setGradient(c1, c2, c3);
+
+    sliderRange(3, 315, 1);
+  gui = createGui('p5.gui');
+  gui.addGlobals('strichdicke', 'drehen');
+
+
+
+  noLoop();
 }
 
 
 function draw(){
 
-var stepx = 250; 
-var stepy = 250; 
+var stepx = 353; 
+var stepy = 350; 
 
-for (var x = 0; x<width; x+= stepx) {
-    for (var y = 0; y<height; y+= stepy) {
+for (var x = 0; x<=width; x+= stepx) {
+    for (var y = 0; y<=height; y+= stepy) {
 
-      triangle(0+x, 0+y, 100+x, 200+y, 200+x, 0+y);
+      //triangle(0+x, 0+y, 100+x, 200+y, 200+x, 0+y);
 
       //MusterGedreht(0+x, 0+y);
-      MusterGedreht( 0+x, 0+y);
+      MusterGedreht( 3+x, 178+y);
+      MusterGedreht( -175+x, 2+y);
     }
   }
 
-
 }
 
+function setGradient(c1, c2, c3) {
+  noFill();
+  for (var y = 0; y < height; y++) {
+    var inter = map(y, 0, height, 0, 1);
+    var c = lerpColor(c1, c2, c3, inter);
+    stroke(c);
+    line(0, y, width, y);
+  }
+}
 
+function MusterGedreht(x,y) {
 
-function MusterGedreht() {
-
-  translate(0, 175);
-  rotate(-45);
+  push();
+  translate(x,y);
+  rotate(drehen);
   meinMuster(0, 0);
+  pop();
+
 
 }
 
 function meinMuster(){
 
-strokeWeight(3);
+
+
+strokeWeight(strichdicke);
 stroke(0,0,0);
 
 fill(0,0,0);
@@ -62,6 +94,13 @@ quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
 
 }
 
+
+/*
+ function mousePressed(){
+  go = !go;
+}
+
+*/
 
 
 
