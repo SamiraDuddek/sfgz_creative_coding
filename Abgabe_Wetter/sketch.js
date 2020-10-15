@@ -11,6 +11,14 @@ function setup() {
    background(220);
    angleMode(DEGREES);
 
+<<<<<<< HEAD
+=======
+
+   c1 = color(255, 255, 255);
+   c2 = color(242, 242, 242);
+   c3 = color(217, 217, 217);
+   setGradient(c1, c2, c3);
+>>>>>>> 7de8430a8769f218c3be8db4451985bab57c6cb1
 
   sliderRange(3, 315, 1);
   gui = createGui('p5.gui');
@@ -33,12 +41,22 @@ for (var x = 0; x<=width; x+= stepx) {
 
       //MusterGedreht(0+x, 0+y);
 
+<<<<<<< HEAD
       MusterGedreht(3+x, 178+y);
       MusterGedreht(-175+x, 2+y);
+=======
+      MusterGedreht( 3+x, 178+y);
+      MusterGedreht( -175+x, 2+y);
+>>>>>>> 7de8430a8769f218c3be8db4451985bab57c6cb1
 
       //MusterGedreht( 0+x, 0+y);
       //quadratGedreht(0+x, 0+y);
 
+<<<<<<< HEAD
+=======
+      quadratGedreht(0+x, 0+y);
+
+>>>>>>> 7de8430a8769f218c3be8db4451985bab57c6cb1
     }
   }
 
