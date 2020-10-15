@@ -11,7 +11,7 @@ function setup() {
    background(220);
    angleMode(DEGREES);
 
-<<<<<<< HEAD
+
    c1 = color(255, 255, 255);
    c2 = color(242, 242, 242);
    c3 = color(217, 217, 217);
@@ -24,8 +24,7 @@ function setup() {
 
 
   noLoop();
-=======
->>>>>>> a47f915adf6c589e3948331fe19504f5fe033c71
+
 }
 
 
@@ -40,14 +39,14 @@ for (var x = 0; x<=width; x+= stepx) {
       //triangle(0+x, 0+y, 100+x, 200+y, 200+x, 0+y);
 
       //MusterGedreht(0+x, 0+y);
-<<<<<<< HEAD
+
       MusterGedreht( 3+x, 178+y);
       MusterGedreht( -175+x, 2+y);
-=======
+
       //MusterGedreht( 0+x, 0+y);
 
       quadratGedreht(0+x, 0+y);
->>>>>>> a47f915adf6c589e3948331fe19504f5fe033c71
+
     }
   }
 
