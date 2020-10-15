@@ -2,30 +2,22 @@ var gui;
 
 var drehen = -45;
 var strichdicke = 3; 
+let c = color(255, 204, 0);
 
 
-var c1, c2, c3;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
    background(220);
    angleMode(DEGREES);
 
-<<<<<<< HEAD
-   c1 = color(255, 255, 255);
-   c2 = color(242, 242, 242);
-   c3 = color(217, 217, 217);
-   setGradient(c1, c2, c3);
 
-    sliderRange(3, 315, 1);
+  sliderRange(3, 315, 1);
   gui = createGui('p5.gui');
   gui.addGlobals('strichdicke', 'drehen');
 
-
-
   noLoop();
-=======
->>>>>>> a47f915adf6c589e3948331fe19504f5fe033c71
+
 }
 
 
@@ -40,28 +32,18 @@ for (var x = 0; x<=width; x+= stepx) {
       //triangle(0+x, 0+y, 100+x, 200+y, 200+x, 0+y);
 
       //MusterGedreht(0+x, 0+y);
-<<<<<<< HEAD
-      MusterGedreht( 3+x, 178+y);
-      MusterGedreht( -175+x, 2+y);
-=======
-      //MusterGedreht( 0+x, 0+y);
 
-      quadratGedreht(0+x, 0+y);
->>>>>>> a47f915adf6c589e3948331fe19504f5fe033c71
+      MusterGedreht(3+x, 178+y);
+      MusterGedreht(-175+x, 2+y);
+
+      //MusterGedreht( 0+x, 0+y);
+      //quadratGedreht(0+x, 0+y);
+
     }
   }
 
 }
 
-function setGradient(c1, c2, c3) {
-  noFill();
-  for (var y = 0; y < height; y++) {
-    var inter = map(y, 0, height, 0, 1);
-    var c = lerpColor(c1, c2, c3, inter);
-    stroke(c);
-    line(0, y, width, y);
-  }
-}
 
 function MusterGedreht(x,y) {
 
@@ -74,7 +56,7 @@ function MusterGedreht(x,y) {
 
 }
 
-
+/*
 function quadratGedreht(x,y){//hier nimmst du die Angaben von oben in Empfang-- d.h. um wieviel in der x und y Koordinate das Muster verschoben wird
     //rectMode(CENTER);
     push();
@@ -83,10 +65,11 @@ function quadratGedreht(x,y){//hier nimmst du die Angaben von oben in Empfang-- 
     rect(0,0,250,50);
     pop();
 }
+}
 
+*/
+ 
 function meinMuster(){
-
-
 
 strokeWeight(strichdicke);
 stroke(0,0,0);
@@ -102,6 +85,8 @@ triangle(250, 0, 250, 250, 0, 250);
 //Grosses Rechteck
 quad(50, 50, 200, 50, 200, 200, 50, 200);
 
+//fill(c);
+
 //kleines Rechteck oben links
 quad(75, 75, 112.5, 75, 112.5, 112.5, 75, 112.5);
 //kleines Rechteck oben rechts
@@ -113,6 +98,20 @@ quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
 
 }
 
+/*
+function mouseMoved() {
+  c = c + 5;
+  if (c > 255) {
+    c = 0;
+  }
+}
+
+*/
+
+ //Kleine Vierecke Farbig machen, Bei Hover und dan bei Klick 
+ //Drehpunkt in der Mitte 
+ //Grösse skalieren bei Mouse 
+
 
 /*
  function mousePressed(){
@@ -120,6 +119,9 @@ quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
 }
 
 */
+
+
+
 
 
 
