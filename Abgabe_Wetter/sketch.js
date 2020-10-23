@@ -2,7 +2,7 @@ var gui;
 
 var drehen = 0;
 var strichdicke = 3; 
-let c = 0;
+let c = 100;
 
 
 
@@ -18,7 +18,7 @@ function setup() {
 
   noLoop();
 
-  c = color(255, 204, 0);
+  c = 100;
 
 }
 
@@ -50,9 +50,21 @@ for (var x = 0; x<=width+stepx; x+= stepx) {
       //QuadratGedreht(0+x, 0+y);
 
 
+
     }
   }
 
+      fill(c);
+    rect(200, 200, 50, 50);
+
+}
+
+function mouseClicked() {
+  if (c === 100) {
+    c = 255;
+  } else {
+    c = 100;
+  }
 }
 
 
@@ -70,18 +82,6 @@ function MusterGedreht(x,y) {
 
 }
 
-/*
-function quadratGedreht(x,y){//hier nimmst du die Angaben von oben in Empfang-- d.h. um wieviel in der x und y Koordinate das Muster verschoben wird
-    //rectMode(CENTER);
-    push();
-    translate(x,y);
-    rotate(-45);
-    rect(0,0,250,50);
-    pop();
-}
-}
-
-*/
  
 function meinMuster(){
 
@@ -105,7 +105,7 @@ triangle(250, 0, 250, 250, 0, 250);
 //Grosses Rechteck
 quad(50, 50, 200, 50, 200, 200, 50, 200);
 
-fill(c);
+//fill(c);
 
 //kleines Rechteck oben links
 quad(75, 75, 112.5, 75, 112.5, 112.5, 75, 112.5);
@@ -120,15 +120,9 @@ quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
 
 }
 
-/*
-function mouseMoved() {
-  c = c + 5;
-  if (c > 255) {
-    c = 0;
-  }
-}
 
-*/
+
+
 
  //Kleine Vierecke Farbig machen, Bei Hover und dan bei Klick 
  //Drehpunkt in der Mitte 
