@@ -1,112 +1,102 @@
 var gui;
 
-var drehen = 0;
-var strichdicke = 3; 
-let c = 100;
+var Wind = 0;
+var WindMax = 3;
+let angle = 0;
+var Bewoelkung = 3; 
+var Sonnenaufgang = 0;
+var SonnenaufgangMax = 40; 
+let c1 = 0;
+let c2 = 0;
+let c3 = 0;
+let c4 = 0;
+let c5 = 0;
 
+
+
+//Bewoelkung = Strichstärke 
+//Wind = Drehung
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-   background(220);
-   angleMode(DEGREES);
+
+  angleMode(DEGREES);
 
 
-  sliderRange(3, 315, 1);
+  sliderRange(3, 60);
   gui = createGui('p5.gui');
-  gui.addGlobals('strichdicke', 'drehen');
+  gui.addGlobals('Bewoelkung','Wind', 'Sonnenaufgang');
 
-  noLoop();
+  //noLoop();
 
-  c = 100;
 
 }
 
 
 function draw(){
 
-   background(255);
+  c1 = lerpColor(color('#05011A'), color('#5279C3'), map(Sonnenaufgang, 0, 40, 0, 1));
+  c2 = lerpColor(color('#FAF3DF'), color('#F6BBF4'), map(Sonnenaufgang, 0, 40, 0, 1));
+  c3 = lerpColor(color('#FFF4D3'), color('#E0FED7'), map(Sonnenaufgang, 0, 40, 0, 1));
+  c4 = lerpColor(color('#352E53'), color('#FFFEE6'), map(Sonnenaufgang, 0, 40, 0, 1));
+  c5 = lerpColor(color('#2D2A3A'), color('#FFFEE6'), map(Sonnenaufgang, 0, 40, 0, 1));
 
-var stepx = 353; 
-var stepy = 350; 
+ background(c5);
 
-for (var x = 0; x<=width+stepx; x+= stepx) {
-    for (var y = 0; y<=height+stepy; y+= stepy) {
+ var stepx = 353; 
+ var stepy = 350; 
 
-      //triangle(0+x, 0+y, 100+x, 200+y, 200+x, 0+y);
+ for (var x = 0; x<=width+stepx; x+= stepx) {
+  for (var y = 0; y<=height+stepy; y+= stepy) {
 
-      //MusterGedreht(0+x, 0+y);
+    MusterGedreht(3+x, 178+y);
+    MusterGedreht(-175+x, 2+y);
 
-      MusterGedreht(3+x, 178+y);
-      MusterGedreht(-175+x, 2+y);
-
-      MusterGedreht( 3+x, 178+y);
-      MusterGedreht( -175+x, 2+y);
-
-
-      //MusterGedreht( 0+x, 0+y);
-      //quadratGedreht(0+x, 0+y);
-
-      //QuadratGedreht(0+x, 0+y);
-
-
-
-    }
   }
-
-      fill(c);
-    rect(200, 200, 50, 50);
-
 }
 
-function mouseClicked() {
-  if (c === 100) {
-    c = 255;
-  } else {
-    c = 100;
-  }
+angle = angle + Wind;
+
 }
 
 
 function MusterGedreht(x,y) {
 
-   push();
-  translate(x ,y);
+ push();
+ translate(x ,y);
+ rotate(-45);
+ meinMuster(0, 0);
 
-  rotate(-45);
-
-  meinMuster(0, 0);
-  pop();
-
-
+ pop();
 
 }
 
- 
+
 function meinMuster(){
 
   push();
-    translate(250/2,250/2);
-    rotate(drehen);
-    translate(-250/2,-250/2);
+  translate(250/2,250/2);
+  rotate(angle);
+  translate(-250/2,-250/2);
 
 
-strokeWeight(strichdicke);
+strokeWeight(Bewoelkung);
 stroke(0,0,0);
 
-fill(0,0,0);
+fill(c1);
 //Dreieck Oben
 triangle(0,0, 250, 0, 0, 250); 
 
-fill(255, 255,255);
+fill(c3);
 //Dreieck uten
 triangle(250, 0, 250, 250, 0, 250);
 
+fill(c4);
 //Grosses Rechteck
 quad(50, 50, 200, 50, 200, 200, 50, 200);
 
-//fill(c);
-
+fill(c2);
 //kleines Rechteck oben links
 quad(75, 75, 112.5, 75, 112.5, 112.5, 75, 112.5);
 //kleines Rechteck oben rechts
@@ -116,7 +106,7 @@ quad(75, 137.5, 112.5, 137.5, 112.5, 175, 75, 175);
 //kleines Rechteck unten rechts
 quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
 
-    pop();
+pop();
 
 }
 
@@ -129,14 +119,6 @@ quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
  //Grösse skalieren bei Mouse
 
  //Strichdicke animieren und kein regler mehr  
-
-
-/*
- function mousePressed(){
-  go = !go;
-}
-
-*/
 
 
 
