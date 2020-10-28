@@ -36,7 +36,7 @@ function setup() {
 
 function draw(){
 
-  c1 = lerpColor(color('#05011A'), color('#5279C3'), map(Sonnenaufgang, 0, 40, 0, 1));
+  c1 = lerpColor(color('#05011A'), color('#5FB8FF'), map(Sonnenaufgang, 0, 40, 0, 1));
   c2 = lerpColor(color('#FAF3DF'), color('#F6BBF4'), map(Sonnenaufgang, 0, 40, 0, 1));
   c3 = lerpColor(color('#FFF4D3'), color('#E0FED7'), map(Sonnenaufgang, 0, 40, 0, 1));
   c4 = lerpColor(color('#352E53'), color('#FFFEE6'), map(Sonnenaufgang, 0, 40, 0, 1));
