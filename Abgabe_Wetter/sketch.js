@@ -82,7 +82,9 @@ function meinMuster(){
 
 
 strokeWeight(Bewoelkung);
+strokeJoin(BEVEL);
 stroke(0,0,0);
+
 
 fill(c1);
 //Dreieck Oben
