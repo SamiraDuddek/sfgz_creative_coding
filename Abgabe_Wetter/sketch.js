@@ -16,6 +16,7 @@ let c5 = 0;
 
 //Bewoelkung = Strichstärke 
 //Wind = Drehung
+//Sonnenaufgang = Farben
 
 
 function setup() {
@@ -23,15 +24,12 @@ function setup() {
 
   angleMode(DEGREES);
 
-
   sliderRange(3, 60);
   gui = createGui('p5.gui');
   gui.addGlobals('Bewoelkung','Wind', 'Sonnenaufgang');
 
-  //noLoop();
-
-
 }
+
 
 
 function draw(){
@@ -63,12 +61,11 @@ angle = angle + Wind;
 
 function MusterGedreht(x,y) {
 
- push();
- translate(x ,y);
- rotate(-45);
- meinMuster(0, 0);
-
- pop();
+  push();
+  translate(x ,y);
+  rotate(-45);
+  meinMuster(0, 0);
+  pop();
 
 }
 
@@ -80,51 +77,34 @@ function meinMuster(){
   rotate(angle);
   translate(-250/2,-250/2);
 
+  strokeWeight(Bewoelkung);
+  strokeJoin(BEVEL);
+  stroke(0,0,0);
 
-strokeWeight(Bewoelkung);
-strokeJoin(BEVEL);
-stroke(0,0,0);
+  fill(c1);
+  //Dreieck Oben
+  triangle(0,0, 250, 0, 0, 250); 
 
+  fill(c3);
+  //Dreieck uten
+  triangle(250, 0, 250, 250, 0, 250);
 
-fill(c1);
-//Dreieck Oben
-triangle(0,0, 250, 0, 0, 250); 
+  fill(c4);
+  //Grosses Rechteck
+  quad(50, 50, 200, 50, 200, 200, 50, 200);
 
-fill(c3);
-//Dreieck uten
-triangle(250, 0, 250, 250, 0, 250);
-
-fill(c4);
-//Grosses Rechteck
-quad(50, 50, 200, 50, 200, 200, 50, 200);
-
-fill(c2);
-//kleines Rechteck oben links
-quad(75, 75, 112.5, 75, 112.5, 112.5, 75, 112.5);
-//kleines Rechteck oben rechts
-quad(137.5, 75, 175, 75, 175, 112.5, 137.5, 112.5);
-//kleines Rechteck unten links
-quad(75, 137.5, 112.5, 137.5, 112.5, 175, 75, 175);
-//kleines Rechteck unten rechts
-quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
-
-pop();
+  fill(c2);
+  //kleines Rechteck oben links
+  quad(75, 75, 112.5, 75, 112.5, 112.5, 75, 112.5);
+  //kleines Rechteck oben rechts
+  quad(137.5, 75, 175, 75, 175, 112.5, 137.5, 112.5);
+  //kleines Rechteck unten links
+  quad(75, 137.5, 112.5, 137.5, 112.5, 175, 75, 175);
+  //kleines Rechteck unten rechts
+  quad(137.5, 137.5, 175, 137.5, 175, 175, 137.5, 175);
+  pop();
 
 }
-
-
-
-
-
- //Kleine Vierecke Farbig machen, Bei Hover und dan bei Klick 
- //Drehpunkt in der Mitte 
- //Grösse skalieren bei Mouse
-
- //Strichdicke animieren und kein regler mehr  
-
-
-
-
 
 
 
